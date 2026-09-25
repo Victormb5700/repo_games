@@ -22,16 +22,25 @@ function update(dt){
 
 //Função desenha o personagem
 function draw(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height); //zera valores quando é redesenhado
-    ctx.fillStyle = "#4ade80"; //cor personagem
-    ctx.fillRect(player.x, player.y, player.h, player.w); //passa as formas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    
-    // ctx.fillStyle = "#fff";
-    //ctx.fillRect(player.x, player.y, player.h, player.w);  NA COR BRANCA
+    ctx.fillStyle = "#4ade80";
 
-    ctx.fillText("O DeltaTime - dt independe da taxa de quadros", 12, 20); //texto dentro do quadro
+    ctx.beginPath();
+    ctx.arc(
+        player.x + player.w / 2,
+        player.y + player.h / 2,
+        player.w / 2,
+        0,
+        Math.PI * 2
+    );
+    ctx.fill();
 
+    ctx.fillText(
+        "O DeltaTime - dt independe da taxa de quadros",
+        12,
+        20
+    );
 }
 
 //funcao de loop, taxa de atualizacao, ts= taxa segundos
