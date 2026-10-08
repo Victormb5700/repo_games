@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGUIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-container">
+
+        <h1>ENGUIA</h1>
+        <p class="subtitle">Coma os peixinhos e cuidado com os corais</p>
+
+        <div class="hud">
+            <span>PONTOS: <strong id="score">0</strong></span>
+            <span>PÉROLAS: <strong id="goldScore">0</strong></span>
+        </div>
+
+        <canvas id="game" width="600" height="600"></canvas>
+
+        <p id="message">Aperte uma direção para começar</p>
+
+        <div class="controls">WASD ou SETAS para jogar</div>
+
+        <div class="mobile-controls">
+            <button onclick="changeDirection('up')">▲</button>
+            <div>
+                <button onclick="changeDirection('left')">◀</button>
+                <button onclick="changeDirection('down')">▼</button>
+                <button onclick="changeDirection('right')">▶</button>
+            </div>
+        </div>
+
+        <button class="restart" onclick="restartGame()">RECOMEÇAR</button>
+
+        <section class="leaderboard">
+            <h2>TOP 5</h2>
+            <ol id="scores"></ol>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

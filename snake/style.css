@@ -1,13 +1,132 @@
-body{
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #111;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    color: #e6fbff;
+    font-family: Arial, sans-serif;
+
+    /* luz do sol entrando de cima, fundo do mar embaixo */
+    background: linear-gradient(180deg, #0b5d75 0%, #063349 45%, #021a2b 100%);
+    background-attachment: fixed;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 640px;
     text-align: center;
 }
 
-canvas{
-    background-color: #222;
-    border: 3px solid #4ade80;
+h1 {
+    font-size: 48px;
+    letter-spacing: 8px;
+    color: #4ff0c2;
+    text-shadow: 0 0 18px rgba(79, 240, 194, 0.5);
+}
+
+.subtitle {
+    color: #9cc9d6;
+    margin: 4px 0 16px;
+}
+
+.hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+
+    background: rgba(2, 26, 43, 0.6);
+    border: 2px solid #1a6a80;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+#score     { color: #4ff0c2; }
+#goldScore { color: #ffe9f2; }
+
+canvas {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    margin: auto;
+
+    border: 3px solid #4ff0c2;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(79, 240, 194, 0.25);
+}
+
+#message {
+    min-height: 24px;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #ff8a7a;
+}
+
+.controls {
+    color: #9cc9d6;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    background: #4ff0c2;
+    color: #022233;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #8ff7da;
+}
+
+.restart {
+    margin-top: 15px;
+    padding: 12px 24px;
+}
+
+.mobile-controls {
+    display: none;
+    margin-top: 12px;
+}
+
+.mobile-controls button {
+    width: 58px;
+    height: 58px;
+    margin: 3px;
+    font-size: 20px;
+}
+
+.leaderboard {
     margin-top: 16px;
+    padding: 15px;
+    background: rgba(2, 26, 43, 0.6);
+    border: 2px solid #1a6a80;
+    border-radius: 12px;
+}
+
+.leaderboard h2 {
+    color: #ff8a7a;
+    margin-bottom: 8px;
+}
+
+#scores {
+    list-style-position: inside;
+    color: #e6fbff;
+    line-height: 1.7;
+}
+
+@media (max-width: 600px), (pointer: coarse) {
+    h1 { font-size: 36px; }
+    .mobile-controls { display: block; }
 }
